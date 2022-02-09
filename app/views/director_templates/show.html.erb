@@ -1,0 +1,148 @@
+hello
+
+<h1>
+  Director #<%=@the_director.id%> details
+</h1>
+
+<a href="/directors" class="btn btn-block btn-outline-secondary">
+  Go back
+</a>
+
+&nbsp;|&nbsp;
+
+<a href="/delete_director/1776" class="btn btn-block btn-outline-secondary">
+  Delete director
+  <small>(Building this link is not required. It's an optional stretch goal; but, you have the tools if you want to give it a try.)</small>
+</a>
+
+<hr>
+
+<dl>
+  <dt>
+    Name
+  </dt>
+  <dd>
+    <%=@the_director.name%>
+  </dd>
+
+  <dt>
+    Dob
+  </dt>
+  <dd>
+    <%=@the_director.dob%>
+  </dd>
+
+  <dt>
+    Bio
+  </dt>
+  <dd>
+    <%=@the_director.bio%>
+  </dd>
+
+  <dt>
+    Image
+  </dt>
+  <dd>
+    <img src="<%=@the_director.image%>">
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    over 6 years ago
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    over 6 years ago
+  </dd>
+</dl>
+
+<hr>
+
+<h2>Filmography</h2>
+
+<table border="1">
+  <tr>
+    <th>
+      ID
+    </th>
+
+    <th>
+      Image
+    </th>
+
+    <th>
+      Title
+    </th>
+
+    <th>
+      Year
+    </th>
+
+    <th>
+      Director
+    </th>
+
+    <th>
+    </th>
+  </tr>
+
+  <tr>
+    <td>
+      2
+    </td>
+
+    <td>
+      <img src="https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg" style="width:250px;">
+    </td>
+
+    <td>
+      The Godfather
+    </td>
+
+    <td>
+      1972
+    </td>
+
+    <td>
+      Francis Ford Coppola
+    </td>
+
+    <td>
+      <a href="/movies/2">
+        Show details
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      3
+    </td>
+
+    <td>
+      <img src="https://image.tmdb.org/t/p/w500/hek3koDUyRQk7FIhPXsa6mT2Zc3.jpg" style="width:250px;">
+    </td>
+
+    <td>
+      The Godfather: Part II
+    </td>
+
+    <td>
+      1974
+    </td>
+
+    <td>
+      Francis Ford Coppola
+    </td>
+
+    <td>
+      <a href="/movies/3">
+        Show details
+      </a>
+    </td>
+  </tr>
+</table>
