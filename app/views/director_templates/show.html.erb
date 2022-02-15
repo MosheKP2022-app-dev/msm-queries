@@ -1,4 +1,4 @@
-hello
+
 
 <h1>
   Director #<%=@the_director.id%> details
@@ -50,14 +50,14 @@ hello
     Created at
   </dt>
   <dd>
-    over 6 years ago
+    <%=time_ago_in_words(@the_director.created_at)%> ago 
   </dd>
 
   <dt>
     Updated at
   </dt>
   <dd>
-    over 6 years ago
+    <%=time_ago_in_words(@the_director.updated_at)%> ago
   </dd>
 </dl>
 
