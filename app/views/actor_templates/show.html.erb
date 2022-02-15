@@ -65,11 +65,15 @@
 
 <table border="1">
 
-<%#@filmography.each do |a_film|%>
+ <% @matching_characters.each do |a_character|%>
+   <% @m_id = a_character.movie_id %>
+  <% matching_movies = Movie.where({ :id => @m_id }) %>
+    <% @the_movie = matching_movies.at(0) %>
+    <% @matching_directors = Director.where({ :id => @the_movie.director_id }).at(0) %>
 
   <tr>
     <th>
-      <%#=a_film.title%>
+      Title
     </th>
 
     <th>
@@ -90,7 +94,7 @@
 
     <tr>
       <td>
-        The Shawshank Redemption
+        <%=@the_movie.title%>
       </td>
 
       <td>
@@ -100,20 +104,20 @@
       <td>
 
 
-          Frank Darabont
+          <%=@matching_directors.name%>
       </td>
 
       <td>
-        Andy Dufresne
+        <%=a_character.name%>
       </td>
 
       <td>
-        <a href="/movies/1">
+        <a href="/movies/<%=@m_id%>">
           Show details
         </a>
       </td>
     </tr>
-    <%#end%>
+    <%end%>
 </table>
 
   </body>

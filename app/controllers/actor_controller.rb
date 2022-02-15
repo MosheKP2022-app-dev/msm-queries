@@ -12,8 +12,18 @@ def actor_details
   the_id = params.fetch("an_id")
 
   @the_actor = Actor.where({:id => the_id}).first
-  #@filmography = Characters.where({:actor_id => @the_actor })
+  
+  @a_id = @the_actor.id
 
+  @matching_characters = Character.where({ :actor_id => @a_id })
+
+  #@matching_characters.movie_id
+
+  #@filmography = Character.where({ :movie_id => @matching_characters })
+  
+  #Movie.where({:_id => @the_director })
+
+ 
 
   render({ :template => "actor_templates/show.html.erb"})
 
