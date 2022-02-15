@@ -72,7 +72,7 @@
 <%=a_film.id%>
 </td>
 <td>
-<img src=<%=a_film.image%>>
+<img src=<%=a_film.image%> style=width:250px;>
 </td>
 <td>
 <%=a_film.title%>
@@ -84,10 +84,7 @@
 <% d= Director.where({ :id => a_film.director_id}).first %>
 <%=d.name%>
 </td>
-<td>
-  <a href=""> Show details
-  </a>
-  </td>
+<td> <a href="/movies/1"> Show details </a></td>
 </tr>
 <%end%>
 </table>
