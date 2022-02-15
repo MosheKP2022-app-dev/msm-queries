@@ -61,88 +61,37 @@
   </dd>
 </dl>
 
-<hr>
 
 <h2>Filmography</h2>
 
 <table border="1">
-  <tr>
-    <th>
-      ID
-    </th>
 
-    <th>
-      Image
-    </th>
-
-    <th>
-      Title
-    </th>
-
-    <th>
-      Year
-    </th>
-
-    <th>
-      Director
-    </th>
-
-    <th>
-    </th>
-  </tr>
-
-  <tr>
-    <td>
-      2
-    </td>
-
-    <td>
-      <img src="https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg" style="width:250px;">
-    </td>
-
-    <td>
-      The Godfather
-    </td>
-
-    <td>
-      1972
-    </td>
-
-    <td>
-      Francis Ford Coppola
-    </td>
-
-    <td>
-      <a href="/movies/2">
-        Show details
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      3
-    </td>
-
-    <td>
-      <img src="https://image.tmdb.org/t/p/w500/hek3koDUyRQk7FIhPXsa6mT2Zc3.jpg" style="width:250px;">
-    </td>
-
-    <td>
-      The Godfather: Part II
-    </td>
-
-    <td>
-      1974
-    </td>
-
-    <td>
-      Francis Ford Coppola
-    </td>
-
-    <td>
-      <a href="/movies/3">
-        Show details
-      </a>
-    </td>
-  </tr>
+<%@filmography.each do |a_film|%>
+<tr>
+<td>
+<%=a_film.id%>
+</td>
+<td>
+<img src=<%=a_film.image%>>
+</td>
+<td>
+<%=a_film.title%>
+</td>
+<td>
+<%=a_film.year%>
+</td>
+<td>
+<% d= Director.where({ :id => a_film.director_id}).first %>
+<%=d.name%>
+</td>
+<td>
+  <a href=""> Show details
+  </a>
+  </td>
+</tr>
+<%end%>
 </table>
+
+
+
+
